@@ -1,0 +1,9 @@
+
+git remote rm heroku
+git remote add heroku git@heroku.com:bambad.git
+
+heroku run rake db:migrate
+heroku run rake db:seed
+
+RAILS_ENV=production bundle exec rake assets:precompile
+RAILS_ENV=production bundle exec rake assets:clean
